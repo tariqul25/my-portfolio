@@ -5,14 +5,14 @@ import { NavLink } from 'react-router';
 const Navbar = () => {
     const links = <>
         <a className='mr-2' href='/'>Home</a>
-        <a className='mr-2' href='/about'>About</a>
-        <a className='mr-2' href='/skills'>Skills</a>
-        <a className='mr-2' href='/projects'>Projects</a>
-        <a className='mr-2' href='/Contact'>Contact</a>
+        <a className='mr-2' href='#about'>About</a>
+        <a className='mr-2' href='#skills'>Skills</a>
+        <a className='mr-2' href='#projects'>Projects</a>
+        <a className='mr-2' href='#contact'>Contact</a>
     </>
     return (
         <div className=" bg-base-100 shadow-sm ">
-            <div className="navbar w-11/12 mx-auto">
+            <div className="navbar max-w-7xl mx-auto md:px-4">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

@@ -1,30 +1,26 @@
 import React from 'react';
-import animationData from '../../../assets/academic.json';
+import profile from '../../../assets/images/tariqul.png';
 import Lottie from 'lottie-react';
 
 const About = () => {
   return (
-    <div id="about" className="px-4 md:px-12 py-8">
-      <h2 className="text-2xl md:text-3xl text-center my-4 font-bold">About Me</h2>
+    <div id="about" className="px-4 mt-4 ">
+      <h2 className="text-2xl md:text-3xl text-center mb-8 mt- font-bold">About Me</h2>
       <div className="w-full flex flex-col md:flex-row items-center gap-6">
         
         {/* Lottie Animation */}
-        <div className="w-full md:w-5/12 h-52 md:h-64 flex justify-center">
-          <Lottie
-            animationData={animationData}
-            aria-label="Academic animation"
-            className="w-full h-full max-w-[300px] md:max-w-full"
-          />
+        <div className='flex items-center'>
+          <img className='h-[400px] ' src={profile} alt="" />
         </div>
 
         {/* About Content */}
         <div className="w-full md:w-7/12 text-justify">
           <h1 className="mb-2 text-xl md:text-2xl">Who am I?</h1>
           <p className="mb-4">
-            Hi, I'm Tariqul — a passionate Jr. web developer focused on building user-friendly projects that solve real-world problems. I came into this tech industry with my deep curiosity for technology and how it works. I am currently pursuing my Diploma in Computer Science and Technology at Kishoreganj Polytechnic Institute, where I am building a solid foundation in computer science. I love learning new tools, exploring ideas, and keeping up with the latest trends.
+           Hi, I'm Tariqul — a passionate junior web developer eager to build user-friendly projects that solve real-world problems. My deep curiosity about technology led me into this field, and I’m now pursuing a Diploma in Computer Science and Technology at Kishoreganj Polytechnic Institute to strengthen my skills and knowledge. I love learning new tools, exploring fresh ideas, and keeping up with the latest trends in web development.
           </p>
           <p className="mb-4">
-            Beyond coding, I actively take on lead roles to grow personally and support my community. I am the Chief Coordinator of Progress-21, a friendship community that brings friends together and contributes to social welfare. During my school years, I was elected as the Chief of the Student Cabinet, where I led and inspired my fellow students. I always strive to be punctual.
+            Beyond coding, I actively lead Progress-21, a friendship community that connects people and supports social welfare. During school, I served as Chief of the Student Cabinet, where I motivated and guided my peers. I always strive to be responsible, punctual, and supportive of my community.
           </p>
           <h3 className="font-semibold mb-1">What Drives Me?</h3>
           <p>Passion, curiosity, and initiative fuel me to learn, grow, and make an impact.</p>

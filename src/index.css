@@ -13,7 +13,6 @@
   --color-secondary: teal;
 } */
 
-
 .font-montserrat {
   font-family: "Montserrat", sans-serif;
 }
@@ -24,4 +23,11 @@
   font-style: normal;
 }
 
-
+html,
+body {
+  overflow-x: hidden;
+}
+html {
+  scroll-behavior: smooth;
+  z-index: 1000;
+}

@@ -184,9 +184,9 @@ export default function Projects() {
   }, []);
 
   return (
-    <section className="py-16 bg-gray-50 relative">
+    <section id="projects" className="py-16 bg-gray-50 relative">
       <div
-        className={`max-w-7xl mx-auto px-4 transition-opacity duration-300 ${
+        className={` px-4 transition-opacity duration-300 ${
           selectedProject ? "opacity-40" : "opacity-100"
         }`}
       >
@@ -268,7 +268,7 @@ export default function Projects() {
         <div className="fixed inset-0 bg-transparent bg-opacity-70 flex items-center justify-center z-50">
           <div
             className="bg-gray-300 p-6 rounded-lg w-full max-w-3xl relative overflow-auto"
-            style={{ maxHeight: "70vh" }}
+            style={{ maxHeight: "80vh" }}
           >
             <button
               onClick={() => setSelectedProject(null)}
