@@ -4,13 +4,13 @@ import Lottie from 'lottie-react';
 
 const About = () => {
   return (
-    <div id="about" className="px-4 mt-4 ">
-      <h2 className="text-2xl md:text-3xl text-center mb-8 mt- font-bold">About Me</h2>
+    <div id="about" className="mt-4">
+      <h2 className="text-2xl md:text-3xl text-center  mb-6 font-bold">About Me</h2>
       <div className="w-full flex flex-col md:flex-row items-center gap-6">
         
         {/* Lottie Animation */}
-        <div className='flex items-center'>
-          <img className='h-[400px] ' src={profile} alt="" />
+        <div className='flex items-center justify-center'>
+          <img className=' md:w-5/12' src={profile} alt="" />
         </div>
 
         {/* About Content */}
