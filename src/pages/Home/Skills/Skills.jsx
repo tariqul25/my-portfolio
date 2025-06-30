@@ -17,7 +17,7 @@ import { VscVscodeInsiders } from "react-icons/vsc";
 
 const frontend = [
   { name: "HTML", icon: <SiHtml5 className="text-orange-500" />, percent: 90 },
-  { name: "CSS", icon: <SiCss3 className="text-blue-500" />, percent: 85 },
+  { name: "CSS", icon: <SiCss3 className="text-accent" />, percent: 85 },
   { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-500" />, percent: 80 },
   { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" />, percent: 85 },
   { name: "React", icon: <SiReact className="text-sky-500" />, percent: 80 },
@@ -57,7 +57,7 @@ function SkillItem({ skill }) {
         </div>
         <div className="w-full  rounded-full h-2">
           <div
-            className="bg-blue-500 h-2 rounded-full"
+            className="bg-accent h-2 rounded-full"
             style={{ width: `${skill.percent}%` }}
           ></div>
         </div>

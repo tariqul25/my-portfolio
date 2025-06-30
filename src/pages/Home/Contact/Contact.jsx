@@ -47,7 +47,7 @@ export default function ContactSection() {
           ></textarea>
           <button
             type="button"
-            className="w-fit px-6 py-2 bg-violet-600 text-white rounded"
+            className="w-fit px-6 py-2 bg-accent text-white rounded"
           >
             Submit
           </button>

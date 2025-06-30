@@ -37,9 +37,9 @@ const Hero = () => {
        <div className='flex justify-center md:justify-start'>
          <button
           onClick={handleDownload}
-          className="btn btn-accent flex items-center gap-2"
+          className="btn btn-accent text-white flex items-center gap-2"
         >
-          Hire Me <FaDownload />
+          Hire Me <FaDownload  />
         </button>
        </div>
       </div>
