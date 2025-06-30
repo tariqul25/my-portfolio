@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import {
   SiReact,
   SiTailwindcss,
@@ -152,13 +155,13 @@ const projects = [
   },
 ];
 
-// ✅ Complete icon map with Firebase Hosting and React Router
+// Icon map for modal tech badges
 const techIconsMap = {
   React: <SiReact className="text-sky-500" />,
   "Tailwind CSS": <SiTailwindcss className="text-cyan-500" />,
   TailwindCSS: <SiTailwindcss className="text-cyan-500" />,
   Firebase: <SiFirebase className="text-yellow-500" />,
-  "Firebase Hosting": <SiFirebase className="text-orange-500" />, // special color
+  "Firebase Hosting": <SiFirebase className="text-orange-500" />,
   "Node.js": <SiNodedotjs className="text-green-600" />,
   Express: <SiExpress className="text-gray-800" />,
   "Express.js": <SiExpress className="text-gray-800" />,
@@ -175,6 +178,11 @@ const techIconsMap = {
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
 
+  // Initialize AOS on mount
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
     <section className="py-16 bg-gray-50 relative">
       <div
@@ -182,68 +190,77 @@ export default function Projects() {
           selectedProject ? "opacity-40" : "opacity-100"
         }`}
       >
-        <h2 className="text-3xl font-bold mb-12 text-center">Projects</h2>
+        <h2 className="text-3xl font-bold  text-center">My Projects</h2>
+        <p className="text-center w-10/12 mx-auto mb-8 ">Showcasing projects that reflect my growth as a developer and passion for building user-friendly applications.These works demonstrate my ability to turn ideas into functional, real-world solutions.</p>
 
         <div className="space-y-12">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="flex flex-col md:flex-row md:items-center md:space-x-8 border border-gray-300 rounded-xl p-6 shadow-md"
-            >
-              <div className="flex-1 mb-6 md:mb-0">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full rounded-lg object-cover"
-                />
-              </div>
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                <p className="mb-3 text-gray-700">{project.description}</p>
-                <h4 className="text-lg font-semibold mb-1">Features:</h4>
-                <ul className="list-disc list-inside mb-4 space-y-1">
-                  {project.coreFeatures.map((feature, i) => (
-                    <li key={i}>{feature}</li>
-                  ))}
-                </ul>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.techStack.map((item, i) => (
-                    <span
-                      key={i}
-                      className="p-2 bg-gray-200 rounded-full text-xl"
-                      title={item.name}
+          {projects.map((project) => {
+            let aosEffect;
+            if (project.id === 1) aosEffect = "fade-down-right";
+            else if (project.id === 2) aosEffect = "fade-down-left";
+            else if (project.id === 3) aosEffect = "fade-down-right";
+
+            return (
+              <div
+                key={project.id}
+                data-aos={aosEffect}
+                className="flex flex-col md:flex-row md:items-center md:space-x-8 border border-gray-300 rounded-xl p-6 shadow-md"
+              >
+                <div className="flex-1 mb-6 md:mb-0">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full rounded-lg object-cover"
+                  />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+                  <p className="mb-3 text-gray-700">{project.description}</p>
+                  <h4 className="text-lg font-semibold mb-1">Features:</h4>
+                  <ul className="list-disc list-inside mb-4 space-y-1">
+                    {project.coreFeatures.map((feature, i) => (
+                      <li key={i}>{feature}</li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.techStack.map((item, i) => (
+                      <span
+                        key={i}
+                        className="p-2 -200 rounded-full text-xl"
+                        title={item.name}
+                      >
+                        {item.icon}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex gap-3 flex-wrap">
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
                     >
-                      {item.icon}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex gap-3 flex-wrap">
-                  <a
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
-                  >
-                    Live Demo
-                  </a>
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-900 transition"
-                  >
-                    GitHub Repo
-                  </a>
-                  <button
-                    onClick={() => setSelectedProject(project)}
-                    className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
-                  >
-                    Details
-                  </button>
+                      Live
+                    </a>
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-900 transition"
+                    >
+                      GitHub
+                    </a>
+                    <button
+                      onClick={() => setSelectedProject(project)}
+                      className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+                    >
+                      Details
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
@@ -259,7 +276,9 @@ export default function Projects() {
             >
               ✖
             </button>
-            <h3 className="text-2xl font-bold mb-4">{selectedProject.modal.name}</h3>
+            <h3 className="text-2xl font-bold mb-4">
+              {selectedProject.modal.name}
+            </h3>
 
             <div className="mb-4">
               <h4 className="text-lg font-semibold mb-2">Features:</h4>

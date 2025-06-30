@@ -1,25 +1,29 @@
 import React from "react";
+import { FaPhone } from "react-icons/fa";
+import { IoLocationSharp } from "react-icons/io5";
+import { MdEmail } from "react-icons/md";
 
 export default function ContactSection() {
   return (
-    <section className="py-10 bg-gray-100 text-gray-900">
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 md:divide-x px-6">
+    <section className="py-6 text-gray-900">
+        <h1 className="text-center mb-12 text-3xl font-bold">Contact Me</h1>
+      <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 md:divide-x px-6">
         {/* Contact Info */}
         <div className="mb-6 md:mb-0 md:px-6">
           <h1 className="text-3xl font-bold mb-2">Get in touch</h1>
           <p className="mb-4">Fill in the form to start a conversation</p>
           <ul className="space-y-2">
             <li className="flex items-center">
-              <span className="mr-2">📍</span>
-              Fake address, 9999 City
+              <span className="mr-2"><IoLocationSharp /></span>
+              Kishoreganj,Dhaka,Bangladesh
             </li>
             <li className="flex items-center">
-              <span className="mr-2">📞</span>
-              123456789
+              <span className="mr-2"><FaPhone /></span>
+              +8801703301137
             </li>
             <li className="flex items-center">
-              <span className="mr-2">✉️</span>
-              contact@business.com
+              <span className="mr-2"><MdEmail /></span>
+              imtariqul21@gmail.com
             </li>
           </ul>
         </div>
@@ -28,17 +32,17 @@ export default function ContactSection() {
         <form className="flex flex-col gap-4 md:px-6">
           <input
             type="text"
-            placeholder="Full name"
+            placeholder="John Doe"
             className="p-3 rounded bg-white border"
           />
           <input
             type="email"
-            placeholder="Email address"
+            placeholder="John@Doe.com"
             className="p-3 rounded bg-white border"
           />
           <textarea
             rows="4"
-            placeholder="Your message"
+            placeholder="Your message..."
             className="p-3 rounded bg-white border"
           ></textarea>
           <button

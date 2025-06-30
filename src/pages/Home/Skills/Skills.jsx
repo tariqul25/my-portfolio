@@ -48,14 +48,14 @@ const fillTimes = (list) => {
 
 function SkillItem({ skill }) {
   return (
-    <div className="mb-4 flex items-center space-x-3 min-h-[50px]">
+    <div className="mb-4 flex items-center space-x-3 min-h-[45px]">
       <div className="text-2xl">{skill.icon}</div>
       <div className="flex-1">
         <div className="flex justify-between mb-0.5">
           <span className="text-sm font-medium">{skill.name}</span>
           <span className="text-xs text-gray-600">{skill.percent}%</span>
         </div>
-        <div className="w-full bg-gray-300 rounded-full h-2">
+        <div className="w-full  rounded-full h-2">
           <div
             className="bg-blue-500 h-2 rounded-full"
             style={{ width: `${skill.percent}%` }}
@@ -123,11 +123,11 @@ export default function VerticalMarqueeSkills() {
 
       <section id="skills"
         ref={sectionRef}
-        className="py-12 bg-gray-100 max-w-7xl mx-auto px-4"
+        className="py-12   px-8"
       >
-        <h2 className="text-3xl font-bold text-center mb-10">My Skills</h2>
+        <h2 className="text-3xl font-bold text-center mb-10">Skills</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div data-aos="fade-right" className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Frontend */}
           <div>
             <h3 className="text-xl font-semibold mb-3 text-center">Frontend</h3>
@@ -144,7 +144,7 @@ export default function VerticalMarqueeSkills() {
           </div>
 
           {/* Backend */}
-          <div>
+          <div data-aos="fade-up"> 
             <h3 className="text-xl font-semibold mb-3 text-center">Backend</h3>
             <div
               className="marquee-container"
@@ -162,7 +162,7 @@ export default function VerticalMarqueeSkills() {
           </div>
 
           {/* Tools */}
-          <div>
+          <div data-aos="fade-left">
             <h3 className="text-xl font-semibold mb-3 text-center">Tools</h3>
             <div
               className="marquee-container"

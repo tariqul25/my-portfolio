@@ -1,41 +1,57 @@
-import Lottie from 'lottie-react';
 import React from 'react';
 import { FaDownload, FaFacebook, FaLinkedinIn } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { IoLogoGithub } from 'react-icons/io';
-import academicLottie from '../../../assets/academic.json'
+import profile from '../../../assets/tariqul.png';
 
 const Hero = () => {
-    const handleDownload = () => {
-        // This can be a direct link to your file (PDF, ZIP, etc.)
-        const link = document.createElement("a");
-        link.href = "/path/to/your/file.pdf"; // Replace with your file path
-        link.download = "MyFile.pdf"; // Name for the downloaded file
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
-    return (
-        <div className='w-full flex items-center'>
-            <div className='w-7/12 '>
-                <h2 className='text-xl mb-3'>Hey There!</h2>
-                <h1 className='text-3xl'>I'm  <span className='font-bold'>MD TARIQUL ISLAM</span></h1>
-                <p className='text-2xl mb-3'>-Jr. Web Developer</p>
-                <p>Coding interactive experiences with passion and precision</p>
-                <div className='mt-1 mb-2'>
-                    <button className='btn btn-circle mr-1'><IoLogoGithub /></button>
-                    <button className='btn btn-circle mr-1'><FaLinkedinIn /></button>
-                    <button className='btn btn-circle mr-1'><FaXTwitter /></button>
-                    <button className='btn btn-circle mr-1'><FaFacebook /></button>
-                </div>
-                <button onClick={handleDownload} className='btn btn-accent'>Hire Me<FaDownload /></button>
-            </div>
-            <div className='w-5/12'>
-                <Lottie animationData={academicLottie}></Lottie>
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/path/to/your/file.pdf"; // Replace with your file path
+    link.download = "MyFile.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
-            </div>
+  return (
+    <div className="w-full flex flex-col-reverse md:flex-row items-center justify-between px-4 md:px-12 py-8 gap-6">
+      {/* Left Content */}
+      <div className="w-full md:w-7/12 text-center md:text-left">
+        <h2 className="text-lg md:text-xl mb-2">Hey There!</h2>
+        <h1 className="text-2xl md:text-4xl mb-2">
+          I'm <span className="font-bold">MD TARIQUL ISLAM</span>
+        </h1>
+        <p className="text-xl md:text-2xl mb-3">- Jr. Web Developer</p>
+        <p className="mb-4">Coding interactive experiences with passion and precision</p>
+
+        {/* Social Icons */}
+        <div className="flex justify-center md:justify-start gap-2 mb-4">
+          <a href="#" className="btn btn-circle"><IoLogoGithub /></a>
+          <a href="#" className="btn btn-circle"><FaLinkedinIn /></a>
+          <a href="#" className="btn btn-circle"><FaXTwitter /></a>
+          <a href="#" className="btn btn-circle"><FaFacebook /></a>
         </div>
-    );
+
+        {/* Download Button */}
+        <button
+          onClick={handleDownload}
+          className="btn btn-accent flex items-center gap-2"
+        >
+          Hire Me <FaDownload />
+        </button>
+      </div>
+
+      {/* Right Content - Profile Image */}
+      <div className="w-full md:w-5/12 flex justify-center">
+        <img
+          src={profile}
+          alt="Profile"
+          className="w-48 md:w-full max-w-[300px] md:max-w-[400px] rounded-full object-cover"
+        />
+      </div>
+    </div>
+  );
 };
 
 export default Hero;
