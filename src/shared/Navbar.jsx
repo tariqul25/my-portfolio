@@ -11,7 +11,7 @@ const Navbar = () => {
         <a className='mr-2' href='#contact'>Contact</a>
     </>
     return (
-        <div className=" bg-base-100 shadow-sm ">
+        <div className=" fixed top-0 left-0 w-full z-50 bg-base-100 shadow-sm  ">
             <div className="navbar max-w-7xl mx-auto md:px-4">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -20,7 +20,7 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 space-y-2 w-40  p-2 shadow">
                             {links}
                         </ul>
                     </div>

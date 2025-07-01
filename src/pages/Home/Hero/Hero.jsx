@@ -15,7 +15,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="w-full flex flex-col-reverse md:flex-row items-center justify-between px-4 md:px-24 pt-8 gap-6">
+    <div className="w-full flex flex-col-reverse md:flex-row mt-8 items-center justify-between px-4 md:px-24 pt-8 gap-6">
       {/* Left Content */}
       <div className="w-full md:w-7/12 text-center md:text-left">
         <h2 className="text-lg md:text-xl mb-2">Hey There!</h2>
@@ -49,7 +49,7 @@ const Hero = () => {
        <img
   src={profile}
   alt="Profile"
-  className="w-48 md:w-full max-w-[300px] md:max-w-[400px] rounded-full object-cover transform rotate-8 hover:rotate-0"
+  className="w-48 md:w-full max-w-[300px] md:max-w-[400px] rounded-full object-cover transform rotate-0 md:rotate-8 md:hover:rotate-0"
 />
 
       </div>

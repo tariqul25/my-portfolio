@@ -14,7 +14,7 @@ const About = () => {
         </div>
 
         {/* About Content */}
-        <div className="w-full md:w-7/12 text-justify">
+        <div className="w-full md:w-7/12 px-2 md:px-0 text-justify">
           <h1 className="mb-2 text-xl md:text-2xl">Who am I?</h1>
           <p className="mb-4">
            Hi, I'm Tariqul — a passionate junior web developer eager to build user-friendly projects that solve real-world problems. My deep curiosity about technology led me into this field, and I’m now pursuing a Diploma in Computer Science and Technology at Kishoreganj Polytechnic Institute to strengthen my skills and knowledge. I love learning new tools, exploring fresh ideas, and keeping up with the latest trends in web development.
