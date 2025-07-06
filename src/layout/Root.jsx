@@ -5,11 +5,9 @@ import Footer from '../shared/Footer';
 
 const Root = () => {
     return (
-        <div>
+        <div className='min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden'>
             <Navbar></Navbar>
-            <div className='max-w-7xl mx-auto md:px-4'>
-                <Outlet></Outlet>
-            </div>
+            <Outlet></Outlet>
             <Footer></Footer>
         </div>
     );

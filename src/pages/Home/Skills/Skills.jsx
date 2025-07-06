@@ -1,185 +1,163 @@
-import React, { useEffect, useRef, useState } from "react";
-import {
-  SiHtml5,
-  SiCss3,
-  SiTailwindcss,
-  SiJavascript,
-  SiReact,
-  SiFirebase,
-  SiMongodb,
-  SiExpress,
-  SiNodedotjs,
-  SiJsonwebtokens,
-  SiGit,
-  SiNpm
-} from "react-icons/si";
-import { VscVscodeInsiders } from "react-icons/vsc";
+import React from "react";
 
-const frontend = [
-  { name: "HTML", icon: <SiHtml5 className="text-orange-500" />, percent: 90 },
-  { name: "CSS", icon: <SiCss3 className="text-accent" />, percent: 85 },
-  { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-500" />, percent: 80 },
-  { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" />, percent: 85 },
-  { name: "React", icon: <SiReact className="text-sky-500" />, percent: 80 },
-];
-
-const backend = [
-  { name: "Firebase", icon: <SiFirebase className="text-yellow-500" />, percent: 75 },
-  { name: "MongoDB", icon: <SiMongodb className="text-green-500" />, percent: 70 },
-  { name: "Express.js", icon: <SiExpress className="text-gray-700" />, percent: 65 },
-  { name: "Node.js", icon: <SiNodedotjs className="text-green-600" />, percent: 70 },
-  { name: "JWT", icon: <SiJsonwebtokens className="text-red-500" />, percent: 60 },
-];
-
-const tools = [
-  { name: "Git", icon: <SiGit className="text-orange-600" />, percent: 85 },
-  { name: "npm", icon: <SiNpm className="text-red-600" />, percent: 80 },
-  { name: "VS Code", icon: <VscVscodeInsiders className="text-blue-600" />, percent: 90 },
-];
-
-const maxLength = Math.max(frontend.length, backend.length, tools.length);
-const itemHeight = 55;
-const containerHeight = maxLength * itemHeight;
-
-const fillTimes = (list) => {
-  const times = Math.ceil((2 * maxLength) / list.length);
-  return Array(times).fill(list).flat();
+const skills = {
+  frontend: [
+    { name: "HTML", level: 90 },
+    { name: "CSS", level: 85 },
+    { name: "Tailwind CSS", level: 85 },
+    { name: "JavaScript", level: 85 },
+    { name: "React", level: 80 },
+  ],
+  backend: [
+    { name: "Firebase", level: 90 },
+    { name: "MongoDB", level: 75 },
+    { name: "Express.js", level: 75 },
+    { name: "Node.js", level: 70 },
+    { name: "JWT", level: 90 },
+  ],
+  tools: [
+    { name: "Git", level: 85 },
+    { name: "npm", level: 80 },
+    { name: "VS Code", level: 90 },
+  ],
 };
 
-function SkillItem({ skill }) {
+export default function SkillsSection() {
   return (
-    <div className="mb-4 flex items-center space-x-3 min-h-[45px]">
-      <div className="text-2xl">{skill.icon}</div>
-      <div className="flex-1">
-        <div className="flex justify-between mb-0.5">
-          <span className="text-sm font-medium">{skill.name}</span>
-          <span className="text-xs text-gray-600">{skill.percent}%</span>
-        </div>
-        <div className="w-full  rounded-full h-2">
-          <div
-            className="bg-accent h-2 rounded-full"
-            style={{ width: `${skill.percent}%` }}
-          ></div>
-        </div>
-      </div>
-    </div>
-  );
-}
+    <section
+      id="skills"
+      className="py-16 px-4 sm:px-6 lg:px-8 relative z-10"
+    >
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl font-bold text-center text-white mb-12">
+          Skills
+        </h2>
 
-export default function VerticalMarqueeSkills() {
-  const sectionRef = useRef();
-  const [startScroll, setStartScroll] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setStartScroll(true);
-        }
-      },
-      { threshold: 0.3 } // starts when 30% visible
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  return (
-    <>
-      <style>{`
-        .marquee-container {
-          overflow: hidden;
-          background: white;
-          border-radius: 8px;
-          box-shadow: 0 0 8px rgb(0 0 0 / 0.1);
-          padding: 12px;
-        }
-        .marquee-content {
-          display: flex;
-          flex-direction: column;
-        }
-        .animate {
-          animation: scrollUp 12s linear infinite;
-        }
-        .marquee-content:hover {
-          animation-play-state: paused;
-        }
-        @keyframes scrollUp {
-          0% {
-            transform: translateY(0);
-          }
-          100% {
-            transform: translateY(-50%);
-          }
-        }
-      `}</style>
-
-      <section id="skills"
-        ref={sectionRef}
-        className="py-12 px-3"
-      >
-        <h2 id="skills" className="text-3xl font-bold text-center mb-10">Skills</h2>
-
-        <div data-aos="fade-right" className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-8">
           {/* Frontend */}
-          <div>
-            <h3 className="text-xl font-semibold mb-3 text-center">Frontend</h3>
-            <div
-              className="marquee-container"
-              style={{ height: `${containerHeight}px` }}
-            >
-              <div className={`marquee-content ${startScroll ? "animate" : ""}`}>
-                {[...frontend, ...frontend].map((skill, i) => (
-                  <SkillItem key={i} skill={skill} />
-                ))}
-              </div>
+          <div className="bg-black/20 backdrop-blur-md border border-white/10 rounded-lg p-8 hover:scale-105 hover:shadow-2xl transition-all duration-700">
+            <h3 className="text-purple-400 text-xl font-semibold mb-6 flex items-center">
+              <svg
+                className="mr-2 h-5 w-5 animate-pulse"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                />
+              </svg>
+              Frontend
+            </h3>
+            <div className="space-y-4">
+              {skills.frontend.map((skill) => (
+                <div
+                  key={skill.name}
+                  className="transform transition-all duration-500 hover:translate-x-2"
+                >
+                  <div className="flex justify-between text-sm text-gray-300 mb-1">
+                    <span>{skill.name}</span>
+                    <span>{skill.level}%</span>
+                  </div>
+                  <div className="w-full bg-gray-700 rounded-full h-2">
+                    <div
+                      className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full"
+                      style={{ width: `${skill.level}%` }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Backend */}
-          <div data-aos="fade-up"> 
-            <h3 className="text-xl font-semibold mb-3 text-center">Backend</h3>
-            <div
-              className="marquee-container"
-              style={{ height: `${containerHeight}px` }}
-            >
-              <div
-                className={`marquee-content ${startScroll ? "animate" : ""}`}
-                style={{ animationDuration: "14s" }}
+          <div className="bg-black/20 backdrop-blur-md border border-white/10 rounded-lg p-8 hover:scale-105 hover:shadow-2xl transition-all duration-700">
+            <h3 className="text-purple-400 text-xl font-semibold mb-6 flex items-center">
+              <svg
+                className="mr-2 h-5 w-5 animate-pulse"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                {[...backend, ...backend].map((skill, i) => (
-                  <SkillItem key={i} skill={skill} />
-                ))}
-              </div>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
+                />
+              </svg>
+              Backend
+            </h3>
+            <div className="space-y-4">
+              {skills.backend.map((skill) => (
+                <div
+                  key={skill.name}
+                  className="transform transition-all duration-500 hover:translate-x-2"
+                >
+                  <div className="flex justify-between text-sm text-gray-300 mb-1">
+                    <span>{skill.name}</span>
+                    <span>{skill.level}%</span>
+                  </div>
+                  <div className="w-full bg-gray-700 rounded-full h-2">
+                    <div
+                      className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full"
+                      style={{ width: `${skill.level}%` }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Tools */}
-          <div data-aos="fade-left">
-            <h3 className="text-xl font-semibold mb-3 text-center">Tools</h3>
-            <div
-              className="marquee-container"
-              style={{ height: `${containerHeight}px` }}
-            >
-              <div
-                className={`marquee-content ${startScroll ? "animate" : ""}`}
-                style={{ animationDuration: "10s" }}
+          <div className="bg-black/20 backdrop-blur-md border border-white/10 rounded-lg p-8 hover:scale-105 hover:shadow-2xl transition-all duration-700">
+            <h3 className="text-purple-400 text-xl font-semibold mb-6 flex items-center">
+              <svg
+                className="mr-2 h-5 w-5 animate-pulse"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                {fillTimes(tools).map((skill, i) => (
-                  <SkillItem key={i} skill={skill} />
-                ))}
-              </div>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+              Tools
+            </h3>
+            <div className="space-y-4">
+              {skills.tools.map((skill) => (
+                <div
+                  key={skill.name}
+                  className="transform transition-all duration-500 hover:translate-x-2"
+                >
+                  <div className="flex justify-between text-sm text-gray-300 mb-1">
+                    <span>{skill.name}</span>
+                    <span>{skill.level}%</span>
+                  </div>
+                  <div className="w-full bg-gray-700 rounded-full h-2">
+                    <div
+                      className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full"
+                      style={{ width: `${skill.level}%` }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

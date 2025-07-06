@@ -5,19 +5,21 @@ import About from "../pages/Home/About/About";
 import Skills from "../pages/Home/Skills/Skills";
 import Contact from "../pages/Home/Contact/Contact";
 import Project from "../pages/Home/Project/Project";
+import ProjectDetails from "../pages/ProjectDetails/ProjectDetails";
 
-export const router=createBrowserRouter(
+export const router = createBrowserRouter(
     [
         {
             path: '/',
             Component: Root,
             children: [
-                {index:true,Component:Home },
-                {path:'about',Component:About },
-                {path:'skills',Component:Skills },
-                {path:'contact',Component:Contact },
-                {path:'project',Component:Project },
+                { index: true, Component: Home },
+                { path: 'about', Component: About },
+                { path: 'skills', Component: Skills },
+                { path: 'contact', Component: Contact },
+                { path: 'project', Component: Project },
             ]
-        }
+        },
+        { path: 'project/:id', Component: ProjectDetails },
     ]
 )
