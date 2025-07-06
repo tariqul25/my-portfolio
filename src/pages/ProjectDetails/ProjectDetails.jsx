@@ -7,10 +7,10 @@ const ProjectDetails = () => {
   const projects = [
     {
       id: 1,
-      title: "Historical Artifacts Tracker",
+      title: "Artifact-Atlas",
       description: "A comprehensive web application designed for browsing, adding, and managing historical artifacts with secure authentication system and interactive like functionality.",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",
-      technologies: ["React", "MongoDB", "Express.js", "JWT", "Node.js", "Tailwind CSS"],
+      image: "https://i.ibb.co/yBSxbTBW/Screenshot-156.png",
+      technologies: ["React", "MongoDB", "Express.js","Node.js", "JWT", "JavaScript","Firebase","React-Router", "Tailwind CSS"],
       features: [
         "Complete CRUD operations for artifacts management",
         "JWT-based authentication with protected routes",
@@ -19,7 +19,7 @@ const ProjectDetails = () => {
         "Search and filter functionality",
         "User profile management"
       ],
-      liveLink: "https://historical-artifacts-8b68f.web.app/",
+      liveLink: "https://artifact-atlas-e6058.web.app/",
       githubLink: "https://github.com/tariqul25/Historical-Artifacts-Client.git",
       challenges: [
         "Implementing secure JWT authentication while maintaining user experience",
@@ -37,10 +37,10 @@ const ProjectDetails = () => {
     },
     {
       id: 2,
-      title: "Gardening Community Hub",
+      title: "GardenHub",
       description: "A vibrant community platform connecting gardening enthusiasts to share knowledge, discover local gardeners, organize events, and build meaningful connections.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop",
-      technologies: ["React", "Firebase", "Tailwind CSS", "React Router", "Context API"],
+      image: "https://i.ibb.co/CK8CYY7H/Screenshot-151.png",
+      technologies: ["React", "Firebase", "Tailwind CSS", "React Router", "Context API","MongoDB","Node.js","Express.js"],
       features: [
         "Full CRUD operations for gardening tips and advice",
         "Multi-authentication system (Email & Google)",
@@ -49,8 +49,8 @@ const ProjectDetails = () => {
         "Event creation and management",
         "Location-based gardener discovery"
       ],
-      liveLink: "https://garden-guidance.web.app/",
-      githubLink: "https://github.com/tariqul25/Garden-Guidance-Client.git",
+      liveLink: "https://garden-hub-548e6.web.app/",
+      githubLink: "https://github.com/tariqul25/Garden-Guidance.git",
       challenges: [
         "Integrating multiple authentication providers seamlessly",
         "Creating an intuitive filtering system for diverse content",
@@ -67,10 +67,10 @@ const ProjectDetails = () => {
     },
     {
       id: 3,
-      title: "BillEase Manager",
+      title: "BillPay BD",
       description: "A secure and user-friendly web application for managing and paying various utility bills including electricity, gas, water, and internet services with integrated balance management.",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop",
-      technologies: ["React", "Node.js", "MongoDB", "JWT", "Express.js", "Stripe API"],
+      image: "https://i.ibb.co/5hrBvpWk/Screenshot-163.png",
+      technologies: ["React", "Javascript","Tailwind CSS", "Firebase"],
       features: [
         "Comprehensive bill viewing and payment system",
         "Secure authentication with password recovery",

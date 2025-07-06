@@ -92,7 +92,7 @@ export default function ProjectsSection() {
                 </div>
                 <div className="mt-auto">
                   <Link to={`/project/${project.id}`}>
-                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center">
+                    <button className="w-full cursor-pointer bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center">
                       View Details
                       <svg
                         className="ml-2 h-4 w-4 animate-pulse"
