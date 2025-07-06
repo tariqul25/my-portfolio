@@ -4,11 +4,11 @@ import { Link } from "react-router";
 const projects = [
   {
     id: 1,
-    title: "Historical Artifacts Tracker",
+    title: "Artifact-Atlas",
     description:
       "A web app for browsing, adding, and managing historical artifacts with secure authentication and a like system.",
     image:
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop",
+      "https://i.ibb.co/Z1FmHjcP/Screenshot-162.png",
     technologies: ["React", "MongoDB", "Express.js", "JWT"],
     features: [
       "Add, Update & Delete Artifacts (CRUD)",
@@ -18,11 +18,11 @@ const projects = [
   },
   {
     id: 2,
-    title: "Gardening Community Hub",
+    title: "GardenHub",
     description:
       "A community platform for gardening enthusiasts to share tips, find local gardeners, post events, and connect with others.",
     image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=300&fit=crop",
+      "https://i.ibb.co/3YddhBYY/Screenshot-161.png",
     technologies: ["React", "Firebase", "Tailwind CSS"],
     features: [
       "Share, Update & Delete Gardening Tips (CRUD)",
@@ -32,11 +32,11 @@ const projects = [
   },
   {
     id: 3,
-    title: "BillEase Manager",
+    title: "BillPayBD",
     description:
       "A secure web application to view, manage, and pay various utility bills like electricity, gas, water, and internet using your account balance.",
     image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop",
+      "https://i.ibb.co/5hrBvpWk/Screenshot-163.png",
     technologies: ["React", "Node.js", "MongoDB", "JWT"],
     features: [
       "View & Pay Utility Bills with Balance Deduction",
